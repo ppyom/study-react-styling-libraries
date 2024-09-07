@@ -1,13 +1,14 @@
 import Button from './components/Button/Button';
 import Card from './components/Card/Card';
 import './index.css';
+import styles from './HomePage.module.css';
 
 const ModuleCSS = () => {
   return (
     <main>
       <h2>ModuleCSS</h2>
       <p>CSS를 모듈단위로 사용하는 방식입니다.</p>
-      <section>
+      <section className={styles.section}>
         <h3>컴포넌트</h3>
         <article>
           <h4>버튼</h4>

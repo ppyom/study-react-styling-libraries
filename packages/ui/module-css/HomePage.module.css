@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section h3 {
+  width: 100%;
+}
+.section article {
+  flex: 1;
+}
