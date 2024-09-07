@@ -104,4 +104,5 @@ selector {
 
 <!-- 링크 형식으로 작성!! [작성자, 제목, 사이트이름 - 참고한 내용](링크) -->
 
+- [SeongKuk Han, React Monorepo Setup Tutorial with pnpm and Vite: React project + UI, Utils, DEV Community](https://dev.to/lico/react-monorepo-setup-tutorial-with-pnpm-and-vite-react-project-ui-utils-5705)
 - [taker, packge.json의 workspaces, velog](https://velog.io/@kksh1205/packge.json%EC%9D%98-workspaces)

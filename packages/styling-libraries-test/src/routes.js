@@ -1,9 +1,9 @@
-import NativeCss from '@srsl/ui/native-css';
-import ModuleCSS from '@srsl/ui/module-css';
+import { NativeCSS, ModuleCSS, TailwindCSS } from '@srsl/ui';
 
 const routes = [
-  { title: 'NativeCSS', pathname: 'native', Element: NativeCss },
+  { title: 'NativeCSS', pathname: 'native', Element: NativeCSS },
   { title: 'ModuleCSS', pathname: 'module', Element: ModuleCSS },
+  { title: 'TailwindCSS', pathname: 'tailwind', Element: TailwindCSS },
 ];
 
 export { routes };
