@@ -55,4 +55,6 @@ selector {
 
 ## 참고한 글
 
-- <!-- 링크 형식으로 작성!! [작성자, 제목, 사이트이름 - 참고한 내용](링크) -->
+<!-- 링크 형식으로 작성!! [작성자, 제목, 사이트이름 - 참고한 내용](링크) -->
+
+- [taker, packge.json의 workspaces, velog](https://velog.io/@kksh1205/packge.json%EC%9D%98-workspaces)
