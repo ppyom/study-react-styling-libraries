@@ -1,0 +1,29 @@
+.card {
+  @apply max-w-[300px] overflow-hidden;
+  @apply border-[1px] border-solid border-black/20;
+  @apply rounded-lg;
+}
+.imageWrap {
+  @apply overflow-hidden pt-[70%];
+  @apply relative;
+}
+.imageWrap img {
+  @apply size-full object-cover;
+  @apply absolute top-0 left-0;
+  @apply duration-300;
+}
+.title,
+.content {
+  @apply px-4;
+}
+.title {
+  @apply text-lg font-bold;
+}
+.content {
+  @apply pb-4;
+}
+.card:hover img {
+  /* @apply scale-125; */
+  /* Reset을 하지 않기 위해 주석처리한 부분에 변수가 저장되어있어 스타일이 적용되지않아 해당 부분은 일반 CSS 사용 */
+  scale: 1.2;
+}

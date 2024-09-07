@@ -1,0 +1,3 @@
+/*@tailwind base;*/ /* 다른 스타일을 건들지 않도록 */
+@tailwind components;
+@tailwind utilities;
