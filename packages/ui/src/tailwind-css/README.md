@@ -6,7 +6,7 @@
 
 ### 설정
 
-1. 설치 / 설정파일 생성
+1. 아래 명령어를 사용해 설치하고 설정파일을 생성합니다.
 
    ```shell
    npm install -D postcss autoprefixer tailwindcss
@@ -15,29 +15,29 @@
 
 2. 설정파일을 작성합니다.
 
-- postcss.config.js
+   - postcss.config.js
 
-  ```js
-  module.exports = {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  };
-  ```
+     ```js
+     module.exports = {
+       plugins: {
+         tailwindcss: {},
+         autoprefixer: {},
+       },
+     };
+     ```
 
-- tailwind.config.js
+   - tailwind.config.js
 
-  ```js
-  /** @type {import('tailwindcss').Config} */
-  module.exports = {
-    content: ["./src/**/*.{html,js}"],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  };
-  ```
+     ```js
+     /** @type {import('tailwindcss').Config} */
+     module.exports = {
+       content: ["./src/**/*.{html,js}"],
+       theme: {
+         extend: {},
+       },
+       plugins: [],
+     };
+     ```
 
 3. 최상위 CSS에 아래 코드를 추가합니다.
 
