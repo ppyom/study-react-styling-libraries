@@ -3,6 +3,7 @@
 > **프로그래머스 데브코스(클라우드 기반 프론트엔드 엔지니어링 1기)** 학습에서 2차 프로젝트 2팀의 2차 RBF 진행을 위한 저장소입니다.
 
 - React에서 사용할 수 있는 스타일링 라이브러리/프레임워크를 사용하는 방법과 제가 실제로 사용했을 때 느낀 장단점을 정리하기 위해 작성합니다.
+- 스타일링 방법에 대한 내용은 주관적인 의견이 많이 들어갔습니다.
 
 ## NativeCSS
 
@@ -314,25 +315,62 @@ CSS를 JS 내부에서 사용할 수 있고, 이를 컴포넌트 형태로 사�
 
 - 컴포넌트가 복잡한 구조로 만들어졌을 때 처리가 힘들어보입니다.
 
-<!--
-
 ## 내용 정리
+
+> 대부분의 내용은 제 주관적인 의견이 많이 반영되어있으며 성능 관련된 부분은 다른 사이트를 참고했습니다.
+
+### Native CSS vs Module CSS
+
+저는 React 기준에서는 **Module CSS**를 사용하는 것이 좋다고 생각합니다.
+
+제가 생각하기에 컴포넌트를 만들 때 가장 중요한 것은 캡슐화라고 생각합니다.
+다른 컴포넌트에서 해당 컴포넌트 안에 어떤 로직이 있는지, 스타일일을 어떻게 적용했는지를 몰라야한다고 생각합니다.
+
+그래서 저는 공통적으로 많은 부분에 들어가야하는 스타일은 `index.css`에 작성하거나 별도의 컴포넌트로 분리하고, 컴포넌트 각자의 스타일은 `[컴포넌트이름].module.css`에 작성합니다.
+
+또한 상위 컴포넌트에서 하위 컴포넌트의 스타일을 적용해야한다면 상위 컴포넌트에서 지정한 스타일을 `className` 속성으로 넘겨받아 처리가 가능하기 때문에 저는 React에서 **Native CSS**보다 **Module CSS**를 사용하는 것이 좋다고 생각합니다.
+
+### TailwindCSS vs Bootstrap
+
+저는 두 방법이 전혀 다른 방법이라고 생각합니다.
+
+물론 **Bootstrap**도 **TailwindCSS**처럼 className으로 적용할 수도 있지만, React에서의 **Bootstrap**은 className으로 사용하기보다 이미 만들어진 Component 형태로 사용하는 것이 더 많이 보입니다.
+
+그래서 저는 두 가지 방법은 **취향에 맞는 방법을 사용하는 것**이 좋다고 생각합니다.
+
+### Styled Components vs Emotion ([🔗참고한 글](https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80))
+
+저는 두 방법 모두 오늘 처음 약 2시간 정도 사용해봤습니다.
+사용해본 시간이 짧기 때문에 어떤 것이 더 좋고 별로라는 것을 제가 정하는 것보다 다른 정리된 글의 결론을 가져왔습니다.
+
+- 유의미한 성능차이가 있는 것이 아니다. 라이브러리 버전에 따라 달라질 수 있다.
+- 개발팀에서 더 익숙한 것을 사용하면 될 것 같다.
+- emotion의 css props로 css를 더 활용도 높게 조립할 수 있다. 하지만 안쓰면 그만이다.
+- SSR에서는 emotion 세팅시 더 간편하다.
+
+추가적으로 저는 문서만 봤을 때에는 **Emotion**이 조금 더 좋다고 생각했습니다.
+
+### CSS in JS vs Module CSS ([🔗참고한 글](https://fe-developers.kakaoent.com/2022/220210-css-in-kakaowebtoon/))
+
+두 방법 모두 스타일을 겹치지 않는 className으로 변환해준다는 공통점이 있지만 사용 방법 및 런타임 성능에 차이점이 있습니다.
+
+**CSS in JS**는 JavaScript 코드 내에서 동적으로 스타일링을 할 수 있다는 장점이 있지만 스타일을 페이지 로딩 시 생성하여 런타임 성능이 상대적으로 떨어질 수 있다는 단점이 있습니다.
+
+**Module CSS**는 스타일이 미리 빌드되어 정적인 CSS 파일을 사용하기 때문에 런타임 성능은 문제 없지만, 동적으로 스타일링을 처리하기 어렵다는 단점이 있습니다.
+
+그래서 동적으로 처리하는 부분이 없다면 **Module CSS**를 사용하는 것이 더 좋고, 간단한 동적 처리 작업이 있다면 **CSS in JS**를 사용하는 것이 좋다고 생각합니다.
+
+하지만 동적으로 스타일링이 변경되는 작업이 많이 들어갈수록 **CSS in JS**의 렌더링 속도가 떨어질 수 있어 *동적으로 스타일링이 많이 변경되는 작업을 처리하는 스타일링 방법*은 이후 내용을 더 찾아본 이후 작성하겠습니다.
 
 ## 결론
 
-1. 결론 1
+### 취향에 맞는 방법을 사용하자.
 
-   - 내용
-
-2. 결론 2
-
-   - 내용
-
--->
+- 매우 치명적인 단점이 아니라면 결국 본인에게 편한 방법을 사용하는것이 좋은 것 같습니다.
 
 ## 참고한 글
 
-<!-- 링크 형식으로 작성!! [작성자, 제목, 사이트이름 - 참고한 내용](링크) -->
-
 - [SeongKuk Han, React Monorepo Setup Tutorial with pnpm and Vite: React project + UI, Utils, DEV Community](https://dev.to/lico/react-monorepo-setup-tutorial-with-pnpm-and-vite-react-project-ui-utils-5705)
 - [taker, packge.json의 workspaces, velog](https://velog.io/@kksh1205/packge.json%EC%9D%98-workspaces)
+- [bepyan, styled-components 과 emotion, 도대체 차이가 뭔가?, Velog](https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80)
+- [서현우(bono), 카카오웹툰은 CSS를 어떻게 작성하고 있을까?, 카카오 FE 기술블로그 - 다시 CSS (feat. CSS Module)](https://fe-developers.kakaoent.com/2022/220210-css-in-kakaowebtoon/#%EB%8B%A4%EC%8B%9C-css-feat-css-module)
