@@ -86,7 +86,7 @@ selector {
 
 #### 설정
 
-1. 라이브러리 설치 / 설정파일 생성
+1. 설치 / 설정파일 생성
 
    ```shell
    npm install -D postcss autoprefixer tailwindcss
