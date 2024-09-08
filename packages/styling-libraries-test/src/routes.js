@@ -4,6 +4,7 @@ import {
   TailwindCSS,
   Bootstrap,
   StyledComponent,
+  Emotion,
 } from '@srsl/ui';
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { title: 'TailwindCSS', pathname: 'tailwind', Element: TailwindCSS },
   { title: 'Bootstrap', pathname: 'bootstrap', Element: Bootstrap },
   { title: 'StyledComponent', pathname: 'styled', Element: StyledComponent },
+  { title: 'Emotion', pathname: 'emotion', Element: Emotion },
 ];
 
 export { routes };
