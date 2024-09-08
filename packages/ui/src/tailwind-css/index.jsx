@@ -6,7 +6,10 @@ const TailwindCss = () => {
   return (
     <main>
       <h2>TailwindCSS</h2>
-      <p>스타일 작성을 쉽게 할 수 있도록 도와주는 라이브러리니다.</p>
+      <p>
+        스타일 작성을 쉽게 할 수 있도록 도와주는 유틸리티 기반 CSS
+        프레임워크입니다.
+      </p>
       <section className="flex flex-wrap">
         <h3 className="w-full">컴포넌트</h3>
         <article className="flex-1">
