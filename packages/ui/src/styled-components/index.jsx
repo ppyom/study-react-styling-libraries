@@ -7,8 +7,8 @@ const StyledComponent = () => {
     <main>
       <h2>Styled Component</h2>
       <p>
-        CSS를 JS 내부에서 사용할 수 있고, 이를 모듈 형태로 만들어주는
-        라이브러리입니다.
+        CSS를 JS 내부에서 사용할 수 있고, 이를 컴포넌트 형태로 사용할 수 있게
+        만들어주는 라이브러리입니다.
       </p>
       <Section>
         <H3>컴포넌트</H3>
